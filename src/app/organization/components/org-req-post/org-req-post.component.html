@@ -1,0 +1,57 @@
+<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg">
+         <h3 id="heading">ORGANIZATION DASHBOARD</h3>
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+        <a class="nav-link"><span class="glyphicon glyphicon-home" (click)="navigateToHome()"></span>Home</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link"><span class="glyphicon glyphicon-user" (click)="navigateToProfile()"></span>Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"><span class="glyphicon glyphicon-calendar" (click)=" navigateToPostReq()"></span>Post Requirment</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link"><span class="glyphicon glyphicon-off" (click)="navigateToLogout()"></span>Logout</a>
+        </li>
+        </ul>
+        </nav>
+    </div>
+    <u><h4>Add New Requirment Post</h4></u>
+    <div class="div1">
+    <div class="card mt-3">
+        <ul class="list-group list-group-flush">
+          <li>
+            <form  [formGroup]="postReq" (ngSubmit)="savePost()">
+             
+              <div class="form-group">
+                <div class="form-group">
+                  <label >Organization Name</label>
+                  <input type="text" class="form-control" formControlName="organizationName" [placeholder]="organizationName" readonly>
+                </div>
+              <div class="form-group">
+                <label >StartDate</label>
+                <input type="date" class="form-control" formControlName="startDate" placeholder="start date">
+              </div>
+              <label>Duration In hrs</label>
+                <input type="text" class="form-control" formControlName="duration" aria-describedby="emailHelp" placeholder="enter duration">
+              </div>
+              <label>Skills and Description</label>
+              <div class="form-group">       
+                <textarea rows = "5" cols = "179" formControlName="skillsDesc"> </textarea>  
+              </div>
+              <div class="col-md-12 text-center">
+                <input type="submit" class="btn btn-primary" value="Post"/>
+            </div>
+            </form>
+          </li>
+        </ul>
+       </div>
+      </div>
+</body>
+<div class="footer" style="text-align: right;">@Ramachandiran</div>
+    

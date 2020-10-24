@@ -1,0 +1,97 @@
+<body>
+    <div class="container contact-form">
+            <form [formGroup]="orgSignUpForm" (ngSubmit)="saveOrgSignUp()">
+                <h3>Organization SignUp</h3>
+           <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" formControlName="organizationName" class="form-control" placeholder="Organization Name*"/>
+                        <span *ngIf="orgSignUpForm.get('organizationName').invalid && orgSignUpForm.get('organizationName').touched">
+
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="landLineNumber" class="form-control" placeholder="LandLineNumber *"/>
+                        <span *ngIf="orgSignUpForm.get('landLineNumber').invalid && orgSignUpForm.get('landLineNumber').touched">
+
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="website" class="form-control" placeholder="Website"  />
+                        <span *ngIf="orgSignUpForm.get('website').invalid && orgSignUpForm.get('website').touched">
+
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="contactPersonName" class="form-control" placeholder="Contact Person Name" />
+                        <span *ngIf="orgSignUpForm.get('contactPersonName').invalid && orgSignUpForm.get('contactPersonName').touched">
+
+                        </span>
+                    </div><br/>
+                    <div>
+                        <input type="text" formControlName="contactPersonDesignation" class="form-control" placeholder="Contact Person Designation" />
+                        <span *ngIf="orgSignUpForm.get('contactPersonDesignation').invalid && orgSignUpForm.get('contactPersonDesignation').touched">
+
+                        </span>
+                    </div><br/>
+                    <div>
+                        <input type="text" formControlName="contactPersonEmailId" class="form-control" placeholder="Contact Person EmailId" />
+                        <span *ngIf="orgSignUpForm.get('contactPersonEmailId').invalid && orgSignUpForm.get('contactPersonEmailId').touched">
+
+                        </span>
+                    </div><br/>
+                    <div>
+                    <input type="text" formControlName="contactPersonMobileNumber" class="form-control" placeholder="Contact Person Mobile Number" />
+                    <span *ngIf="orgSignUpForm.get('contactPersonMobileNumber').invalid && orgSignUpForm.get('contactPersonMobileNumber').touched">
+
+                    </span>
+                    </div><br/>
+                    <div>
+                        <input type="text" formControlName="organizationProfile" class="form-control" placeholder="Organization Profile"  />
+                        <span *ngIf="orgSignUpForm.get('organizationProfile').invalid && orgSignUpForm.get('organizationProfile').touched">
+
+                        </span>
+                    </div><br/>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea formControlName="address" class="form-control" placeholder="Address" style="width: 100%; height: 150px;"></textarea>
+                        <span *ngIf="orgSignUpForm.get('address').invalid && orgSignUpForm.get('address').touched">
+
+                        </span>
+                    </div><br/>
+                    <div><br/>
+                        <input type="text" formControlName="username" class="form-control" placeholder="Username"/><br/>
+                        <span *ngIf="orgSignUpForm.get('username').invalid && orgSignUpForm.get('username').touched">
+
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="password" class="form-control" placeholder="Password" />
+                        <span *ngIf="orgSignUpForm.get('password').invalid && orgSignUpForm.get('password').touched">
+
+                        </span>
+                    </div><br/>
+                    <br/>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <input class="form-control" id="submit" type="submit" value="submit"/>
+        </form>
+    </div>
+    </body>
+
+<!--
+  organizationName
+  address
+  landLineNumber
+  website
+  contactPersonName
+  contactPersonDesignation
+  contactPersonEmailId
+  contactPersonMobileNumber
+  organizationProfile
+  username
+  password
+-->

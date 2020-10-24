@@ -1,0 +1,104 @@
+<body>
+<div class="container contact-form">
+        <form [formGroup]="trainerForm" (ngSubmit)="saveTrainer()">
+            <h3>Trainer SignUp</h3>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="firstName" class="form-control" placeholder="First name *"/>
+                    <span *ngIf="(trainerForm.get('firstName').invalid && trainerForm.get('firstName').touched)">
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="lastName" class="form-control" placeholder="Last name *"/>
+                    <span *ngIf="(trainerForm.get('lastName').invalid && trainerForm.get('lastName').touched)">
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="date" formControlName="dob" class="form-control" placeholder="Dob"  />
+                </div>
+                <span *ngIf="(trainerForm.get('dob').invalid && trainerForm.get('dob').touched)">
+                </span>
+                <div>
+                    <input type="text" formControlName="email" class="form-control" placeholder="Email" />
+                    <span *ngIf="(trainerForm.get('email').invalid && trainerForm.get('email').touched)">
+                    </span>
+                    <!--trainerForm.get('email').errors.pattern-->
+                </div><br/>
+                <div>
+                    <input type="text" formControlName="mobileNum" class="form-control" placeholder="Mobile number" />
+                    <span *ngIf="(trainerForm.get('mobileNum').invalid && trainerForm.get('mobileNum').touched)">
+                    </span>
+                </div><br/>
+                <div>
+                    <input type="text" formControlName="highestDegree" class="form-control" placeholder="Highest degree" />
+                </div><br/>
+                <div>
+                    <label style="color: aliceblue;">Total Experience</label>
+                    <select class="form-control"  formControlName="totalExperience">
+                        <option value="1" selected="selected">1 year</option>
+                        <option value="2">2 year</option>
+                        <option value="3">3 year</option>
+                        <option value="4">4 year</option>
+                        <option value="5">5+ year</option>
+                    </select>
+                    <span *ngIf="(trainerForm.get('totalExperience').invalid && trainerForm.get('totalExperience').touched)">
+                    </span>
+                </div><br/>
+                <div>
+        
+                </div><br/>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea formControlName="address" class="form-control" placeholder="Address" style="width: 100%; height: 150px;"></textarea>
+                    <span *ngIf="(trainerForm.get('address').invalid && trainerForm.get('address').touched)">
+                    </span>
+                </div><br/>
+                <label style="color: aliceblue;">Training Experience</label>
+                    <select class="form-control"  formControlName="trainingExperice">
+                        <option value="1" selected="selected">1 year</option>
+                        <option value="2">2 year</option>
+                        <option value="3">3 year</option>
+                        <option value="4">4 year</option>
+                        <option value="5">5+ year</option>
+                    </select>
+                <div><br/>
+                    <input type="text" formControlName="username" class="form-control" placeholder="Username"/><br/>
+                    <span *ngIf="(trainerForm.get('username').invalid && trainerForm.get('username').touched)">
+                    </span>
+                </div>
+                <div>
+                    <input type="text" formControlName="password" class="form-control" placeholder="Password" />
+                    <span *ngIf="(trainerForm.get('password').invalid && trainerForm.get('password').touched)">
+                    </span>
+                </div><br/>
+                <br/>
+            </div>
+        </div>
+        <br/>
+        <label style="color: aliceblue;">Skills</label>
+        <div formArrayName="skills">
+        <span *ngFor="let skill of skills.controls;index as i">
+         <input id="check" type="checkbox" [formControlName]="i"/><span id="skill">{{dbSkills[i].skillName}}</span>&nbsp;&nbsp;&nbsp;
+        </span>
+        </div>
+        <br/>
+        <input class="form-control" id="submit" type="submit" value="submit"/>
+    </form>
+</div>
+</body>
+<!--private String firstName;
+	private String lastName;
+	private Date dob;
+	private String email;
+	private Integer mobileNum;
+	private String highestDegree;
+	private Integer totalExperience;
+	private Integer trainingExperice;
+	private String address;
+	private String username;
+	private String password;
+	private String roles;
+	@ManyToMany(fetch=FetchType.EAGER)
+	private List<Skill> skills=new ArrayList<Skill>();-->

@@ -1,0 +1,89 @@
+body{
+    background:white;
+    overflow:auto;
+    height:100%;
+}
+.header {
+    position: relative;
+    left:1;
+    right:0%;
+    top: 0;
+    width: 100%;
+    height:5%;
+    font-weight:400;
+    color: white;
+    background-color: lightblue;
+    margin-right:20%;
+    
+}
+ .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:5%;
+    color: rgb(20, 19, 19);
+    text-align: center;
+    background-color: lightblue;
+}
+.bottom{
+    top:12%;
+    color: lightcyan;
+}
+#heading{
+    color: darkblue;
+    margin-left:470px;
+    font-weight: 600;
+}
+
+/*
+for form
+*/
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+.container{
+    overflow:auto;
+}
+h4{
+    font-weight: 600;
+    text-align: center;
+}
+label{
+    font-size:large;
+}
+.div1{
+    align-items: center;
+}
+.card {
+   align-items:left;
+    width:100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width:50%;
+    height:100%;
+    word-wrap: break-word;
+    background-color: rgb(175, 227, 240);
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+input[type=submit]
+{
+    align-content: center;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}

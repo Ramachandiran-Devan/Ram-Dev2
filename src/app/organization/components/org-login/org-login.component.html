@@ -1,0 +1,31 @@
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-15 col-md-10 col-lg-8 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">ORGANIZATION LOGIN</h5>
+              <form [formGroup]="OrgCredentials"  (ngSubmit)="orgLogIn()" class="form-signin">
+                <div class="form-label-group">
+                  <div><h5>USER NAME</h5></div>
+                  <input type="text" id="inputEmail" formControlName="username" class="form-control" placeholder="username" required autofocus>
+                </div>
+  
+                <div class="form-label-group">
+                  <div><h5>PASSWORD</h5></div>
+                  <input type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="Password" required>
+                </div>
+                <input  type="submit" value="sign-in" class="btn btn-lg btn-mybtn btn-block text-uppercase"/>
+              </form>
+              <div *ngIf="isLoad" id="preloader">
+                <div id="loader"></div>
+              </div>
+                <hr class="my-4">
+                <button class="btn btn-lg btn-google btn-block text-lowercase" type="submit" (click)="orgSignUp()"><i class="fab fa-google mr-2"></i>ORGANIZATION SIGN UP</button><br/>
+                <button class="btn btn-lg btn-facebook btn-block text-lowercase" type="submit" (click)="trainerSign()"><i class="fab fa-facebook-f mr-2"></i>TRAINER SIGN UP & LOG IN </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

@@ -1,0 +1,61 @@
+<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg">
+         <h3 id="heading">ORGANIZATION DASHBOARD</h3>
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+        <a class="nav-link"><span class="glyphicon glyphicon-home" (click)="navigateToHome()"></span>Home</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link"><span class="glyphicon glyphicon-user" (click)="navigateToProfile()"></span>Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"><span class="glyphicon glyphicon-calendar" (click)=" navigateToPostReq()"></span>Post Requirment</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link"><span class="glyphicon glyphicon-off" (click)="navigateToLogout()"></span>Logout</a>
+        </li>
+        </ul>
+        </nav>
+    </div>
+    <h3>Trainers List</h3>
+    <div *ngFor="let post of trainers;index as i" class="container bootstrap-snippet header-container">
+        <hr/>
+          <div  class="bg-white">
+            <div class="container py-5">
+              <div  class="media col-md-10 col-lg-8 col-xl-7 p-0 my-4 mx-auto">
+                <div class="media-body ml-5">
+                  <h4 class="font-weight-bold mb-4">{{i+1}}.Trainer Name:&nbsp;{{post.firstName}}{{post.lastName}}</h4>
+                  <div class="text-muted mb-4">
+                    Email:&nbsp;{{post.email}}
+                  </div>
+                  <div class="text-muted mb-4">
+                    Mobile Number:&nbsp;{{post.mobileNum}}
+                  </div>
+                  <div class="text-muted mb-4">
+                    Qualification:&nbsp;{{post.highestDegree}}
+                  </div>
+                  <div class="text-muted mb-4">
+                    Experience:&nbsp;{{post.totalExperience}}&nbsp;Years
+                  </div>
+                 <span class="text-muted mb-4"><span>Trainer Skills:</span></span><br/><br/>
+                  <div *ngFor="let skill of post.skills;index as i"class="text-muted mb-4">
+                    <span>{{i+1}}.{{skill.skillName}}</span>
+                  </div>
+                  <div class="text-muted mb-4">
+                    <br/>
+                    <button (click)="navigateToTraiProfile(post.username)"class="btn btn-primary">click to see Trainer Profile</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr/>
+          </div>
+          <hr/>
+      </div>
+</body>
+<div class="footer" style="text-align: right;">@Ramachandiran</div>
+    
